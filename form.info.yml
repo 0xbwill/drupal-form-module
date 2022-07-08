@@ -1,0 +1,7 @@
+name: Form Newsletter
+description: "Formulaire pour recueillir les informations d'un utilisateur puis les stockée dans notre BDD."
+package: Custom
+
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9

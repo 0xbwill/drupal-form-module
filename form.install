@@ -1,0 +1,45 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+
+// Create a table newsletter_users
+function newsletter_schema()
+{
+    $schema['newsletter'] = array(
+        'description' => 'Table stockant les données des utilisateurs reçue via le formulaire',
+        'fields' => array(
+            'id' => array(
+                'description' => 'Identifiant de l\'utilisateur',
+                'type' => 'serial',
+                'not null' => TRUE,
+                'unsigned' => TRUE,
+            ),
+            'civilite' => array(
+                'description' => 'Civilité de l\'utilsateur',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'nom' => array(
+                'description' => 'Nom de l\'utilsateur',
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'email' => array(
+                'description' => 'Email de l\'utilisateur',
+                'type' => 'email',
+                'length' => 150,
+                'not null' => TRUE,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

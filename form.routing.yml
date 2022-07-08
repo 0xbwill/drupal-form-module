@@ -1,0 +1,7 @@
+form.add_user:
+  path: '/inscription-newsletter'
+  defaults:
+    _title: 'Formulaire'	
+    _form: '\Drupal\form\Form\UserForm'
+  requirements:
+    _access: 'TRUE'
